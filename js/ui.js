@@ -1,5 +1,5 @@
 /**
- * ജനകീയ ക്വിസ് — UI Module
+ * ചെങ്കതിർ — UI Module
  * All DOM rendering and screen management.
  * Uses textContent for user-facing strings (XSS safe).
  */
@@ -43,23 +43,24 @@ const QuizUI = (() => {
     const star = el('div', 'welcome__star anim-star-spin anim-fade-in-up welcome-stagger-1', { textContent: '★' });
     star.setAttribute('aria-hidden', 'true');
 
-    // Title with decorators
+    // Title with star decorators
     const titleWrap = el('div', 'anim-fade-in-up welcome-stagger-2');
-    const decorators = el('div', 'welcome__decorators');
-    decorators.innerHTML = '<span>☭</span>';
-    const title = el('h1', 'welcome__title title-display', { textContent: UI.appTitle });
-    const decorators2 = el('div', 'welcome__decorators');
-    decorators2.innerHTML = '<span>☭</span>';
     const titleRow = el('div', 'welcome__decorators');
-    titleRow.appendChild(decorators.querySelector('span').cloneNode(true));
+    const starLeft = document.createElement('span');
+    starLeft.textContent = '☆';
+    const title = el('h1', 'welcome__title title-display', { textContent: UI.appTitle });
+    const starRight = document.createElement('span');
+    starRight.textContent = '☆';
+    titleRow.appendChild(starLeft);
     titleRow.appendChild(title);
-    const sickle2 = document.createElement('span');
-    sickle2.textContent = '☭';
-    titleRow.appendChild(sickle2);
+    titleRow.appendChild(starRight);
     titleWrap.appendChild(titleRow);
 
-    // Subtitle
+    // English subtitle
     const subtitle = el('p', 'welcome__subtitle anim-fade-in-up welcome-stagger-2', { textContent: UI.appSubtitle });
+
+    // Malayalam tagline
+    const tagline = el('p', 'welcome__tagline anim-fade-in-up welcome-stagger-2', { textContent: UI.appTagline });
 
     // Buttons
     const btns = el('div', 'welcome__buttons anim-fade-in-up welcome-stagger-3');
@@ -82,6 +83,7 @@ const QuizUI = (() => {
     wrap.appendChild(star);
     wrap.appendChild(titleWrap);
     wrap.appendChild(subtitle);
+    wrap.appendChild(tagline);
     wrap.appendChild(btns);
     wrap.appendChild(starsRow);
 

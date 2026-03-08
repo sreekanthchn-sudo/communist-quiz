@@ -1,5 +1,5 @@
 /**
- * ജനകീയ ക്വിസ് — App Configuration
+ * ചെങ്കതിർ — App Configuration
  * Edit these values to customise quiz behaviour.
  */
 const CONFIG = {
@@ -23,8 +23,9 @@ const TOPICS = [
 ];
 
 const UI = {
-  appTitle:          'ജനകീയ ക്വിസ്',
-  appSubtitle:       'Communist Knowledge Quiz',
+  appTitle:          'ചെങ്കതിർ',
+  appSubtitle:       'The Communist Knowledge Challenge',
+  appTagline:        'അറിയുക, ഉയരുക',
   startBtn:          'സമരം ആരംഭിക്കുക ★',
   leaderboardBtn:    'വിപ്ലവകാരികളുടെ ഹാൾ 🏆',
   topicSelectTitle:  'വിഷയം തിരഞ്ഞെടുക്കൂ ☭',
