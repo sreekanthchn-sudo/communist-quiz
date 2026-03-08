@@ -1,0 +1,198 @@
+/* ═══════════════════════════════════════════
+   ജനകീയ ക്വിസ് — Animations
+   Soviet Constructivist Motion Design
+   ═══════════════════════════════════════════ */
+
+/* Star spin — continuous rotation for decorative stars */
+@keyframes starSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Fade in from below */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from the left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Pop-in with overshoot */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Shake — wrong answer feedback */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+/* Pulse — generic pulsing */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+/* Correct answer glow */
+@keyframes correctGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 160, 80, 0.3); }
+  50%      { box-shadow: 0 0 25px rgba(0, 160, 80, 0.7); }
+}
+
+/* Wrong answer shake with red glow */
+@keyframes wrongShake {
+  0%, 100% {
+    transform: translateX(0);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
+  }
+  20%, 60% {
+    transform: translateX(-6px);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.6);
+  }
+  40%, 80% {
+    transform: translateX(6px);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.6);
+  }
+}
+
+/* Timer pulse when < 5s remaining */
+@keyframes timerPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scaleY(1.15);
+  }
+}
+
+/* Score increment bounce */
+@keyframes scoreUp {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.4); color: #FFD700; }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Slide down for explanation box */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+/* Progress bar fill animation */
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: var(--fill-percent, 100%); }
+}
+
+/* Glow pulse for buttons */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(204, 0, 0, 0.4); }
+  50%      { box-shadow: 0 0 20px rgba(204, 0, 0, 0.8); }
+}
+
+/* ── Utility classes ── */
+
+.anim-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+
+.anim-slide-in-left {
+  animation: slideInLeft 0.4s ease-out both;
+}
+
+.anim-pop-in {
+  animation: popIn 0.4s ease-out both;
+}
+
+.anim-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.anim-wrong-shake {
+  animation: wrongShake 0.5s ease-in-out;
+}
+
+.anim-correct-glow {
+  animation: correctGlow 1.5s ease-in-out infinite;
+}
+
+.anim-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.anim-score-up {
+  animation: scoreUp 0.4s ease-out;
+}
+
+.anim-slide-down {
+  animation: slideDown 0.4s ease-out both;
+}
+
+.anim-star-spin {
+  animation: starSpin 8s linear infinite;
+}
+
+.anim-timer-pulse {
+  animation: timerPulse 0.8s ease-in-out infinite;
+}
+
+.anim-glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Stagger delays for list items */
+.stagger-1 { animation-delay: 0ms; }
+.stagger-2 { animation-delay: 80ms; }
+.stagger-3 { animation-delay: 160ms; }
+.stagger-4 { animation-delay: 240ms; }
+.stagger-5 { animation-delay: 320ms; }
+.stagger-6 { animation-delay: 400ms; }
+.stagger-7 { animation-delay: 480ms; }
+.stagger-8 { animation-delay: 560ms; }
+.stagger-9 { animation-delay: 640ms; }
+.stagger-10 { animation-delay: 720ms; }
+
+/* Welcome screen stagger */
+.welcome-stagger-1 { animation-delay: 0ms; }
+.welcome-stagger-2 { animation-delay: 150ms; }
+.welcome-stagger-3 { animation-delay: 300ms; }
+.welcome-stagger-4 { animation-delay: 450ms; }
