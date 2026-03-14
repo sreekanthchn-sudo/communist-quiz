@@ -3,8 +3,8 @@
  * Edit these values to customise quiz behaviour.
  */
 const CONFIG = {
-  QUESTIONS_PER_QUIZ:  10,
-  TIMER_SECONDS:       30,
+  QUESTIONS_PER_QUIZ:  20,
+  TIMER_SECONDS:       60,
   PASS_THRESHOLD:      0.60,
   POINTS_CORRECT:      1,
   POINTS_WRONG:        0,
